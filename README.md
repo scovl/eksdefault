@@ -1,5 +1,13 @@
 # Cluster EKS com Terraform
 
+**Pre-requisitos:**
+
+- Terraform instalado no ambiente
+- Edite o arquivo variables.tf e insira os valores das variáveis de acordo com a sua necessidade.
+- Edite o arquivo backend.tf e insira o nome do bucket S3 que será usado para armazenar o statefile do Terraform.
+
+**NOTA:** O statefile é um arquivo que contém o estado atual do cluster EKS. O Terraform usa o statefile para saber quais recursos foram criados e quais recursos devem ser criados. O statefile também é usado para atualizar os recursos existentes. O Terraform armazena o statefile localmente por padrão. No entanto, é uma boa prática armazenar o statefile em um bucket S3. Isso permite que várias pessoas trabalhem no mesmo cluster EKS. Para isso, é necessário criar um bucket S3 e editar o arquivo backend.tf, inserindo o nome do bucket S3 que será usado para armazenar o statefile do Terraform.
+
 Estrutura de diretórios:
 
 ```bash
