@@ -4,7 +4,6 @@ Estrutura de diretórios:
 
 ```bash
 .
-├── backend.tf
 ├── modules
 │   ├── cluster
 │   │   ├── cluster.tf
@@ -26,6 +25,7 @@ Estrutura de diretórios:
 │       ├── node-group.tf
 │       ├── output.tf
 │       └── variables.tf
+├── backend.tf
 ├── modules.tf
 ├── provider.tf
 ├── README.md
