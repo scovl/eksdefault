@@ -79,6 +79,11 @@ Por fim, execute o comando abaixo para verificar se o cluster EKS foi criado com
 ```bash
 kubectl get nodes
 ```
+Para destruir o cluster EKS, execute o comando abaixo:
+
+```bash
+terraform destroy
+```
 
 ## 🤝 Contribuindo
 
