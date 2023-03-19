@@ -95,7 +95,7 @@ Use o comando abaixo para validar o código alterado:
 terraform validate
 ```
 
-E por fim, garante que o código esteja formatado corretamente:
+E por fim, garanta que o código esteja formatado correto:
 
 ```bash
 terraform fmt
