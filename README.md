@@ -87,5 +87,17 @@ terraform destroy
 
 ## 🤝 Contribuindo
 
-Contribuições, problemas e solicitações de recursos são bem-vindos! Sinta-se à vontade para verificar a página de Issues.
+Contribuições, problemas e solicitações de recursos são bem-vindos! Sinta-se à vontade para verificar a página de Issues. Caso deseje alterar a receita acima, sinta-se à vontade para fazer um fork e abrir um pull request. Se você gostou do projeto, não esqueça de deixar uma estrela ⭐️.
+
+Use o comando abaixo para validar o código alterado:
+
+```bash
+terraform validate
+```
+
+E por fim, garante que o código esteja formatado corretamente:
+
+```bash
+terraform fmt
+```
 
