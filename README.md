@@ -3,10 +3,10 @@
 **Pre-requisitos:**
 
 - Terraform instalado no ambiente
-- Edite o arquivo variables.tf e insira os valores das variáveis de acordo com a sua necessidade.
-- Edite o arquivo backend.tf e insira o nome do bucket S3 que será usado para armazenar o statefile do Terraform. Ainda no backend.tf existe o dynamodb_table, que é o nome da tabela que será criada no DynamoDB para armazenar o lock do statefile. O lock é usado para evitar que duas pessoas executem o Terraform ao mesmo tempo, o que pode causar problemas no cluster EKS.
+- Edite o arquivo `variables.tf` e insira os valores das variáveis de acordo com a sua necessidade.
+- Edite o arquivo `backend.tf` e insira o nome do bucket S3 que será usado para armazenar o `statefile` do Terraform. Ainda no `backend.tf` existe o dynamodb_table, que é o nome da tabela que será criada no DynamoDB para armazenar o lock do statefile. O lock é usado para evitar que duas pessoas executem o Terraform ao mesmo tempo, o que pode causar problemas no cluster EKS.
   
-**NOTA:** O statefile é um arquivo que contém o estado atual do cluster EKS. O Terraform usa o statefile para saber quais recursos foram criados e quais recursos devem ser criados. O statefile também é usado para atualizar os recursos existentes. O Terraform armazena o statefile localmente por padrão. No entanto, é uma boa prática armazenar o statefile em um bucket S3. Isso permite que várias pessoas trabalhem no mesmo cluster EKS. Para isso, é necessário criar um bucket S3 e editar o arquivo backend.tf, inserindo o nome do bucket S3 que será usado para armazenar o statefile do Terraform.
+**NOTA:** O statefile é um arquivo que contém o estado atual do cluster EKS. O Terraform usa o `statefile` para saber quais recursos foram criados e quais recursos devem ser criados. O statefile também é usado para atualizar os recursos existentes. O Terraform armazena o statefile localmente por padrão. No entanto, é uma boa prática armazenar o statefile em um bucket S3. Isso permite que várias pessoas trabalhem no mesmo cluster EKS. Para isso, é necessário criar um bucket S3 e editar o arquivo backend.tf, inserindo o nome do bucket S3 que será usado para armazenar o statefile do Terraform.
 
 Estrutura de diretórios:
 
@@ -42,7 +42,7 @@ Estrutura de diretórios:
 
 Este projeto tem como objetivo fornecer uma receita Terraform para criação de um cluster EKS (Amazon Elastic Kubernetes Service) na AWS (Amazon Web Services), que é uma plataforma de gerenciamento de contêineres altamente disponível e escalável.
 
-O cluster EKS será composto por três módulos principais: cluster, network e nodes. Cada módulo possui seu próprio conjunto de arquivos .tf, que contém as definições dos recursos que serão criados na AWS. O módulo cluster é responsável por criar e configurar o cluster EKS propriamente dito. Ele cria o cluster, configura as políticas IAM (Identidade e Acesso), configura o controlador de balanceamento de carga e configura os grupos de segurança.
+O cluster EKS será composto por três módulos principais: cluster, network e nodes. Cada módulo possui seu próprio conjunto de arquivos `.tf`, que contém as definições dos recursos que serão criados na AWS. O módulo cluster é responsável por criar e configurar o cluster EKS propriamente dito. Ele cria o cluster, configura as políticas IAM (Identidade e Acesso), configura o controlador de balanceamento de carga e configura os grupos de segurança.
 
 O módulo network é responsável por criar e configurar a rede VPC (Virtual Private Cloud) na qual o cluster será executado. Ele cria as sub-redes pública e privada, o NAT gateway e a internet gateway. O módulo nodes é responsável por criar os nós de computação que executarão os contêineres no cluster. Ele cria os grupos de segurança e as políticas IAM necessárias para executar os nós. Além dos três módulos principais, o projeto também contém um arquivo provider.tf, que define as credenciais da AWS e a região em que os recursos serão criados, e um arquivo variables.tf, que define as variáveis que serão usadas na receita Terraform. Como usar:
 
