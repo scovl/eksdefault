@@ -1,19 +1,19 @@
-variable aws_region {
-    description = "AWS region"
-    type = string
-    default = "us-east-1"
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
 }
 
-variable cluster_name {
-    description = "Name of the cluster"
-    type = string
-    default = "k8s-generic-cluster"
+variable "cluster_name" {
+  description = "Name of the cluster"
+  type        = string
+  default     = "k8s-generic-cluster"
 }
 
 variable "k8s_version" {
   description = "Kubernetes version"
   type        = string
-  default = "1.20"
+  default     = "1.20"
 }
 
 variable "nodes_instances_sizes" {
@@ -50,5 +50,17 @@ variable "auto_scale_cpu" {
     scale_down_cooldown   = 300
     scale_down_remove     = -1
   }
+}
+
+variable "vpc_cidr_block" {
+  description = "Bloco CIDR da VPC."
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "private_subnet_cidr_blocks" {
+  description = "Lista dos blocos CIDR das sub-redes privadas."
+  type        = list(string)
+  default     = ["10.0.32.0/20", "10.0.48.0/20"]
 }
 

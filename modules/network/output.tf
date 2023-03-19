@@ -2,18 +2,22 @@ output "cluster_vpc" {
   value = aws_vpc.cluster_vpc
 }
 
-output "private_subnet_1a" {
-  value = aws_subnet.private_subnet_1a
+output "cluster_vpc_id" {
+  value = aws_vpc.cluster_vpc.id
 }
 
-output "private_subnet_1c" {
-  value = aws_subnet.private_subnet_1c
+output "cluster_vpc_cidr_block" {
+  value = aws_vpc.cluster_vpc.cidr_block
 }
 
-output "public_subnet_1a" {
-  value = aws_subnet.public_subnet_1a
+output "cluster_vpc_default_security_group_id" {
+  value = aws_vpc.cluster_vpc.default_security_group_id
 }
 
-output "public_subnet_1c" {
-  value = aws_subnet.public_subnet_1c
+output "cluster_vpc_dhcp_options_id" {
+  value = aws_vpc.cluster_vpc.dhcp_options_id
+}
+
+output "cluster_vpc_instance_tenancy" {
+  value = aws_vpc.cluster_vpc.instance_tenancy
 }

@@ -1,22 +1,14 @@
 resource "aws_eks_cluster" "eks_cluster" {
+  name        = var.cluster_name
+  version = var.k8s_version
+  role_arn    = aws_iam_role.eks_cluster_role.arn
 
-    name    = var.cluster_name
-    version = var.k8s_version
-    role_arn = aws_iam_role.eks_cluster_role.arn
+  vpc_config {
+    subnet_ids = concat(var.private_subnet_1a, var.private_subnet_1c)
+    security_group_ids = [aws_security_group.cluster_sg.id]
+  }
 
-    vpc_config {
-        security_group_ids = [
-            aws_security_group.cluster_sg.id
-        ]
-
-        subnet_ids = [
-            var.private_subnet_1a.id,
-            var.private_subnet_1c.id
-        ]
-
-    }
-
-    tags = {
-        "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    }
+  tags = {
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  }
 }

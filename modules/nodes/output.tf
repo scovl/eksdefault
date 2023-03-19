@@ -9,7 +9,3 @@ output "eks_node_role_arn" {
 output "eks_node_group_name" {
     value = aws_eks_node_group.cluster.node_group_name
 }
-
-output "eks_node_group_nodes" {
-    value = aws_eks_node_group.cluster.scaling_config.desired_size
-}
