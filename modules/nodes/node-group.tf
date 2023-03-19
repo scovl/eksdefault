@@ -11,9 +11,9 @@ resource "aws_eks_node_group" "cluster" {
     instance_types = var.nodes_instances_sizes
 
     scaling_config {
-        desired_size    = lookup(var.auto_scale_options, "desired")
-        max_size        = lookup(var.auto_scale_options, "max")
-        min_size        = lookup(var.auto_scale_options, "min")
+        desired_size    = lookup(var.auto_scale_options, "2")
+        max_size        = lookup(var.auto_scale_options, "6")
+        min_size        = lookup(var.auto_scale_options, "2")
     }
 
     tags = {
