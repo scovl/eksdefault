@@ -25,7 +25,7 @@ module "network" {
   source       = "./modules/network"
   cluster_name = var.cluster_name
   aws_region   = var.aws_region
-  
-  vpc_cidr_block = var.vpc_cidr_block
+
+  vpc_cidr_block             = var.vpc_cidr_block
   private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
 }
